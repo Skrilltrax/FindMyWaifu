@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.skrilltrax.find_my_waifu">
-   <application
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
         android:label="find_my_waifu"
         android:icon="@mipmap/ic_launcher">
         <activity
