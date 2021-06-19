@@ -1,4 +1,5 @@
 import 'package:find_my_waifu/blocs/image_list_bloc.dart';
+import 'package:find_my_waifu/saved.dart';
 import 'package:find_my_waifu/view/image_stack.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        actions: [],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SavedImagePage()));
+              },
+              icon: const Icon(Icons.favorite))
+        ],
       ),
       body: Center(
         child: ImageStack(bloc: _bloc),

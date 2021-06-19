@@ -32,17 +32,19 @@ class _ImageStackState extends State<ImageStack> {
             switch (snapshot.data!.status) {
               case Status.LOADING:
                 return LoadingWidget();
-                break;
               case Status.COMPLETED:
                 return CardStack(
                     context,
                     snapshot.data!.data!.files,
-                    (CardSwipeOrientation orientation, int index) =>
-                        {print("Card Swiped")});
-                break;
+                    (CardSwipeOrientation orientation, int index) => {
+                          if (orientation == CardSwipeOrientation.RIGHT)
+                            {
+                              bloc.saveImage(
+                                  snapshot.data!.data!.files.elementAt(index))
+                            }
+                        });
               case Status.ERROR:
                 return LoadingWidget();
-                break;
             }
           } else {
             return LoadingWidget();

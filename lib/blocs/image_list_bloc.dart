@@ -27,6 +27,10 @@ class ImageListBloc {
     }
   }
 
+  saveImage(String imageUrl) async {
+    _imageRepository.saveFile(imageUrl);
+  }
+
   dispose() {
     _imageController.close();
   }

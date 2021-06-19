@@ -5,14 +5,14 @@ import 'package:find_my_waifu/models/image_response.dart';
 import 'package:find_my_waifu/networking/response.dart';
 import 'package:find_my_waifu/repository/image_repository.dart';
 
-class ImageListBloc {
+class SavedImageBloc {
   ImageRepository _imageRepository = ImageRepository();
   StreamController<Response<List<String>>> _imageController = StreamController<Response<List<String>>>();
 
   StreamSink<Response<List<String>>> get imageSink => _imageController.sink;
   Stream<Response<List<String>>> get imageStream => _imageController.stream;
 
-  ImageListBloc() {
+  SavedImageBloc() {
     fetchImageList();
   }
 

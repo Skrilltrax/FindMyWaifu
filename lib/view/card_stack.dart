@@ -1,4 +1,4 @@
-import 'package:find_my_waifu/view/tap_image.dart';
+import 'package:find_my_waifu/view/tap_image_network.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
 
@@ -30,7 +30,7 @@ Widget CardStack(
             clipBehavior: Clip.antiAliasWithSaveLayer,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(8))),
-            child: TapImage(
+            child: TapImageNetwork(
                 key: Key('${imageList[index]}'),
                 photo: '${imageList[index]}',
                 width: maxWidth,
@@ -44,7 +44,7 @@ Widget CardStack(
                             padding: const EdgeInsets.all(16.0),
                             alignment: Alignment.topLeft,
                             child: Center(
-                              child: TapImage(
+                              child: TapImageNetwork(
                                 key: Key('${imageList[index]}'),
                                 photo: '${imageList[index]}',
                                 width: 1000.0,

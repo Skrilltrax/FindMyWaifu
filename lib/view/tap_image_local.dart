@@ -1,9 +1,15 @@
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TapImage extends StatelessWidget {
-  const TapImage({ required Key key, required this.photo, required this.onTap, required this.width }) : super(key: key);
+class TapImageLocal extends StatelessWidget {
+  const TapImageLocal(
+      {required Key key,
+      required this.photo,
+      required this.onTap,
+      required this.width})
+      : super(key: key);
 
   final String photo;
   final VoidCallback onTap;
@@ -18,8 +24,8 @@ class TapImage extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: onTap,
-            child: Image.network(
-              photo,
+            child: Image.file(
+              File(photo),
               fit: BoxFit.cover,
             ),
           ),
