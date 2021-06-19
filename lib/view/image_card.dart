@@ -1,6 +1,6 @@
 import 'package:find_my_waifu/blocs/image_bloc.dart';
 import 'package:find_my_waifu/models/image_response.dart';
-import 'package:find_my_waifu/networking/api_response.dart';
+import 'package:find_my_waifu/networking/response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -23,7 +23,7 @@ class _ImageCardState extends State<ImageCard> {
     return Center(
         child: RefreshIndicator(
           onRefresh: () => bloc.fetchImage(),
-          child: StreamBuilder<ApiResponse<ImageResponse>>(
+          child: StreamBuilder<Response<ImageResponse>>(
             stream: bloc.imageStream,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
